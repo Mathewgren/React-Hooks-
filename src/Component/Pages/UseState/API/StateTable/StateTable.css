@@ -1,0 +1,5 @@
+@media (max-width: 768px) {
+  .d-flex .p-input-icon-left input {
+    width: 70%;
+  }
+}

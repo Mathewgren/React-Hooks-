@@ -1,0 +1,10 @@
+.navbar-bg,
+.hooks {
+  background: rgb(0, 255, 51);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 255, 51, 1) 0%,
+    rgba(9, 121, 92, 1) 39%,
+    rgba(0, 36, 22, 1) 100%
+  );
+}

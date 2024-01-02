@@ -921,7 +921,7 @@ const Reduxform = () => {
   }, [id]);
 
   useEffect(() => {
-    if (users.selectedEmployee) {
+    if (users?.selectedEmployee) {
       setFormData({
         name: users.selectedEmployee.name,
         email: users.selectedEmployee.email,
@@ -935,7 +935,7 @@ const Reduxform = () => {
       });
     }
     console.log(users);
-  }, [users]);
+  }, [users?.selectedEmployee]);
   const nameRegex = /^[a-zA-Z ]{3,30}$/;
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   const phoneRegex = /^\d{10}$/;

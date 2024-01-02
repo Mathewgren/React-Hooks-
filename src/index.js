@@ -14,7 +14,8 @@ import "primeicons/primeicons.css";
 // import { store } from "./ReduxStore/ReducerStore";
 import { Provider } from "react-redux";
 
-import { Store } from "./ReduxStore/ReducerStore";
+// import { Store } from "./ReduxStore/ReducerStore";
+import Store from "./Saga/Sagastore";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -1,7 +1,7 @@
-import rootReducer from "../Reducer/index";
+import rootReducer from "./Sagarootindex";
 import { configureStore } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
-import rootSaga from "../../Redux/Services/SagaApi";
+import rootSaga from "../Service/MockAPI/SagaAPI";
 
 const sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware];

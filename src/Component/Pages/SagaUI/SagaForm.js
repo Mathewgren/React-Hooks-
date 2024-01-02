@@ -48,14 +48,14 @@ const SagaForm = () => {
   }, [id]);
 
   useEffect(() => {
-    if (users.employee) {
-      navigate("/ReduxList");
+    if (users?.employee) {
+      navigate("/sagatable");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [users.employee]);
+  }, [users?.employee]);
 
   useEffect(() => {
-    if (users.selectedEmployee) {
+    if (users?.selectedEmployee) {
       setFormData({
         name: users.selectedEmployee.name,
         email: users.selectedEmployee.email,
@@ -69,12 +69,14 @@ const SagaForm = () => {
       });
     }
     console.log(users);
-  }, [users]);
+  }, [users?.selectedEmployee]);
   const nameRegex = /^[a-zA-Z ]{3,30}$/;
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   const phoneRegex = /^\d{10}$/;
+  // const passwordRegex =
+  //   /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@#$%^&+=!])[A-Za-z\d@#$%^&+=!]{8,}$/;
   const passwordRegex =
-    /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@#$%^&+=!])[A-Za-z\d@#$%^&+=!]{8,}$/;
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!])[A-Za-z\d@#$%^&+=!]{8,}$/;
   const dobRegex = /^\d{4}-\d{2}-\d{2}/;
 
   const validateForm = () => {
@@ -170,7 +172,7 @@ const SagaForm = () => {
             position: toast.POSITION.TOP_RIGHT,
           });
         }
-        // navigate("/ReduxList");
+        navigate("/sagatable");
       } catch (error) {
         toast.error(`Error in the ${id ? "UPDATE" : "POST"} API`, {
           position: toast.POSITION.TOP_RIGHT,
@@ -184,7 +186,7 @@ const SagaForm = () => {
       <div className="main-container w-75 mx-auto">
         <div className="form-container row shadow-lg mt-5">
           <div className="d-flex justify-content-start">
-            <Link to="/ReduxList">
+            <Link to="/sagatable">
               <Button className="rounded-pill mt-4" variant="primary">
                 <FaAngleDoubleLeft className="me-2 mb-1" />
                 Back
@@ -286,7 +288,7 @@ const SagaForm = () => {
                 </button>
               </div>
             </div>
-            <p className="error-message">{formErrors.passwordError}</p>
+            <p className="error-message">{formErrors.password}</p>
           </div>
           <div className="col-md-6">
             <label className="fw-bold">Confirm password</label>
@@ -314,7 +316,7 @@ const SagaForm = () => {
               </div>
             </div>
 
-            <p className="error-message">{formErrors.cpassError}</p>
+            <p className="error-message">{formErrors.cpass}</p>
           </div>
 
           <div className="col-md-6 mb-3 mx-auto">

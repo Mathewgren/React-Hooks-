@@ -92,6 +92,7 @@ import Game from "./Game/Game";
 import CarGame from "./Game/Racegame/CarRace";
 import ReduxList from "./Component/Pages/SagaUI/SagaTable";
 import SagaForm from "./Component/Pages/SagaUI/SagaForm";
+import LionDrawing from "./Component/Pages/Drawing/Lion";
 function App() {
   return (
     <div className="App">
@@ -123,6 +124,7 @@ function App() {
                 <Route path="sagatable" element={<ReduxList />} />
                 <Route path="sagaform" element={<SagaForm />} />
                 <Route path="sagaform/:id" element={<SagaForm />} />
+                <Route path="draw" element={<LionDrawing />} />
 
                 <Route path="*" element={<NoPage />} />
               </Route>

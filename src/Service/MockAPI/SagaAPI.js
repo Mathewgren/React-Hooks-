@@ -5,8 +5,8 @@ import {
   getUsers,
   updateUser,
   deleteUser,
-} from "../../Constent/Api";
-import * as types from "../../Redux/Action/SagaType";
+} from "./MockAPI";
+import * as types from "../../Saga/SagaType";
 import {
   addUserSuccess,
   addUserError,
@@ -19,7 +19,7 @@ import {
   deleteUserSuccess,
   deleteUserError,
   getUserRequest,
-} from "../../Redux/Action/SagaAction";
+} from "../../Saga/SagaAction";
 export function* postData({ payload }) {
   try {
     const response = yield call(createUser, payload);

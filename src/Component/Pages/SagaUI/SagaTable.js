@@ -107,7 +107,7 @@ const ReduxList = () => {
               "Confirm Password",
               "Language",
               "Gender",
-              "Date of Birth",
+              "Date of Birth",  
             ],
           ],
           body: users.employees.map((row) => [

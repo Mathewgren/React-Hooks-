@@ -34,6 +34,14 @@ export const Header = () => {
               <li className="nav-item">
                 <NavLink
                   className="nav-link text-light active mt-2 fs-5"
+                  to="draw"
+                >
+                  Drawing
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link text-light active mt-2 fs-5"
                   to="sagatable"
                 >
                   Saga
